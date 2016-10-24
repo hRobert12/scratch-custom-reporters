@@ -239,7 +239,7 @@ var CustomReporters = (function(ext) {
 			addBlock(['h','define ' + reporter.hatName,getHatFunc(reporter.funcName)]);
 			addBlock([reporter.type,reporter.callName,getCallFunc(reporter.funcName)]);
 			var returnType = reporter.type == functypes.reporter ? '%s' : '%b'; //Get return type for function
-			addBlock([' ','return ' + returnType + ' for ' + reporter.hatName,getReturnFunc(reporter.funcName)]);
+			addBlock(['f','return ' + returnType + ' for ' + reporter.hatName,getReturnFunc(reporter.funcName)]);
 			ext[getHatFunc(reporter.funcName)] = function() { return reporter.hat(); }; //TODO: Come up with better name for hat block function
 			ext[getCallFunc(reporter.funcName)] = function() { reporter.call(arguments); };
 			ext[getReturnFunc(reporter.funcName)] = function(val) { reporter.ret(val); };
